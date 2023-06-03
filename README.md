@@ -157,6 +157,7 @@ Adjusting learning rate of group 0 to 1.0000e-03.
 ```
 We can see the accuracy is above 95%
 
+## Model Summary
 - End we printed the summary of model
 
 ```ruby
