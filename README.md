@@ -1,5 +1,57 @@
 # ERA V1 Session 6
 
+# Part 1 - Backpropagation
+## Forward propagation
+First, we compute the output of the neural network by propagating the input data through the network's layers. Each layer has a set of weights to the input and passes the result through an activation function and then calculate the loss.
+
+```ruby
+h1 = w1*i1 + w2*i2		
+h2 = w3*i1 + w4*i2		
+a_h1 = σ(h1) = 1/(1 + exp(-h1))		
+a_h2 = σ(h2)		
+o1 = w5*a_h1 + w6*a_h2		
+o2 = w7*a_h1 + w8*a_h2		
+a_o1 = σ(o1)		
+a_o2 = σ(o2)	
+E_total = E1 + E2		
+E1 = ½ * (t1 - a_o1)²		
+E2 = ½ * (t2 - a_o2)²	
+```
+## Backward propagation
+```ruby
+∂E_total/∂w5 = (a_01 - t1) * a_o1 * (1 - a_o1) *  a_h1					
+∂E_total/∂w6 = (a_01 - t1) * a_o1 * (1 - a_o1) *  a_h2					
+∂E_total/∂w7 = (a_02 - t2) * a_o2 * (1 - a_o2) *  a_h1					
+∂E_total/∂w8 = (a_02 - t2) * a_o2 * (1 - a_o2) *  a_h2					
+
+∂E_total/∂w1 = ((a_01 - t1) * a_o1 * (1 - a_o1) * w5 +  (a_02 - t2) * a_o2 * (1 - a_o2) * w7) * a_h1 * (1 - a_h1) * i1
+∂E_total/∂w2 = ((a_01 - t1) * a_o1 * (1 - a_o1) * w5 +  (a_02 - t2) * a_o2 * (1 - a_o2) * w7) * a_h1 * (1 - a_h1) * i2												
+∂E_total/∂w3 = ((a_01 - t1) * a_o1 * (1 - a_o1) * w6 +  (a_02 - t2) * a_o2 * (1 - a_o2) * w8) * a_h2 * (1 - a_h2) * i1												
+∂E_total/∂w4 = ((a_01 - t1) * a_o1 * (1 - a_o1) * w6 +  (a_02 - t2) * a_o2 * (1 - a_o2) * w8) * a_h2 * (1 - a_h2) * i2		
+```
+## Loss curve with change in learning rate
+## learning rate - 0.1
+
+![image](https://github.com/Navyabhat03/ERA-V1-Session-6/assets/60884505/d9837669-eb78-4e29-8234-1b1e3cb19a95)
+
+## learning rate - 0.2
+![image](https://github.com/Navyabhat03/ERA-V1-Session-6/assets/60884505/e40d68ee-733c-4090-93ff-735afb9286ab)
+
+## learning rate - 0.5
+![image](https://github.com/Navyabhat03/ERA-V1-Session-6/assets/60884505/4b73a78e-2d12-4f05-a6d2-a14624d7af26)
+
+## learning rate - 0.8
+![image](https://github.com/Navyabhat03/ERA-V1-Session-6/assets/60884505/861e1b96-7640-4f5f-a0c4-9bc237d40ae1)
+
+
+## learning rate - 1.0
+![image](https://github.com/Navyabhat03/ERA-V1-Session-6/assets/60884505/46d40ba3-1f12-4f16-b584-dff0c8e1ae53)
+
+## learning rate - 2.0
+![image](https://github.com/Navyabhat03/ERA-V1-Session-6/assets/60884505/0aba6405-3f23-454d-8895-48039e0f5b57)
+
+# Part 2
+
 ## Create and Train a Neural Network in Python
 
 An implementation to create and train a simple neural network in python - just to learn the basics of how neural networks work.
