@@ -276,24 +276,48 @@ model = Net().to(device)
 summary(model, input_size=(1, 28, 28))
 ```
 ```
+cpu
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
-            Conv2d-1           [-1, 32, 26, 26]             320
-            Conv2d-2           [-1, 64, 24, 24]          18,496
-            Conv2d-3          [-1, 128, 10, 10]          73,856
-            Conv2d-4            [-1, 256, 8, 8]         295,168
-            Linear-5                   [-1, 50]         204,850
-            Linear-6                   [-1, 10]             510
+            Conv2d-1           [-1, 16, 26, 26]             144
+              ReLU-2           [-1, 16, 26, 26]               0
+       BatchNorm2d-3           [-1, 16, 26, 26]              32
+           Dropout-4           [-1, 16, 26, 26]               0
+            Conv2d-5           [-1, 32, 24, 24]           4,608
+              ReLU-6           [-1, 32, 24, 24]               0
+       BatchNorm2d-7           [-1, 32, 24, 24]              64
+           Dropout-8           [-1, 32, 24, 24]               0
+            Conv2d-9           [-1, 10, 24, 24]             320
+        MaxPool2d-10           [-1, 10, 12, 12]               0
+           Conv2d-11           [-1, 16, 10, 10]           1,440
+             ReLU-12           [-1, 16, 10, 10]               0
+      BatchNorm2d-13           [-1, 16, 10, 10]              32
+          Dropout-14           [-1, 16, 10, 10]               0
+           Conv2d-15             [-1, 16, 8, 8]           2,304
+             ReLU-16             [-1, 16, 8, 8]               0
+      BatchNorm2d-17             [-1, 16, 8, 8]              32
+          Dropout-18             [-1, 16, 8, 8]               0
+           Conv2d-19             [-1, 16, 6, 6]           2,304
+             ReLU-20             [-1, 16, 6, 6]               0
+      BatchNorm2d-21             [-1, 16, 6, 6]              32
+          Dropout-22             [-1, 16, 6, 6]               0
+           Conv2d-23             [-1, 16, 6, 6]           2,304
+             ReLU-24             [-1, 16, 6, 6]               0
+      BatchNorm2d-25             [-1, 16, 6, 6]              32
+          Dropout-26             [-1, 16, 6, 6]               0
+        AvgPool2d-27             [-1, 16, 1, 1]               0
+           Conv2d-28             [-1, 10, 1, 1]             160
 ================================================================
-Total params: 593,200
-Trainable params: 593,200
+Total params: 13,808
+Trainable params: 13,808
 Non-trainable params: 0
 ----------------------------------------------------------------
 Input size (MB): 0.00
-Forward/backward pass size (MB): 0.67
-Params size (MB): 2.26
-Estimated Total Size (MB): 2.94
+Forward/backward pass size (MB): 1.06
+Params size (MB): 0.05
+Estimated Total Size (MB): 1.12
+----------------------------------------------------------------
 ```
 
 ### Thank You
