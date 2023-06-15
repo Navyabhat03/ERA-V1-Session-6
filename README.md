@@ -359,7 +359,7 @@ Loss=0.07155724614858627 Batch_id=937 Accuracy=99.17: 100%|███████
 Test set: Average loss: 0.0177, Accuracy: 9944/10000 (99.44%)
 
 ```
-We can see the accuracy is above 95%
+We can see the train accuracy is 99.17% and test accuracy is 99.44%
 
 ## Model Summary
 - End we printed the summary of model
